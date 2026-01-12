@@ -1,21 +1,156 @@
 <!doctype html>
-<html lang="tr">
+<html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/src/style.css" rel="stylesheet">
-    <title>Vinyl App Website</title>
+    <title>Vinyl App</title>
+    <link rel="icon" type="image/png" href="vinyl.png" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              paper: "#f8f5ef",
+              surface: "#f3ece4",
+              coffee: "#2c241f",
+              muted: "#6b5e55",
+              border: "#d8d2c9",
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .section {
+        min-height: 65vh;
+        width: 100%;
+        padding: 0 1.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      }
+
+      .section-paper {
+        background-color: #f8f5ef;
+      }
+
+      .section-surface {
+        background-color: #f3ece4;
+      }
+    </style>
   </head>
 
   <body class="bg-paper text-coffee antialiased">
-    <main class="mx-auto max-w-4xl px-6">
+    <header class="sticky top-0 z-50 bg-paper/80 backdrop-blur border-b border-border">
+      <div class="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <span class="font-semibold tracking-wide">VINYL APP</span>
+        </div>
+      </div>
+    </header>
 
-      <section class="min-h-screen flex flex-col justify-center">
+    <main class="w-full">
+      <section class="section section-paper">
         <h1 class="text-5xl md:text-7xl font-semibold tracking-tight">
-          Slow down the music.
+          Slow down the music
         </h1>
+
+        <p class="mt-6 max-w-xl text-2xl text-muted">
+          Choose an album. Press play. Stay with it. <br/>
+          Vinyl removes the noise so you can focus on the music.
+        </p>
+
+        <div class="mt-10 flex gap-4">
+          <a
+            href="#manifesto"
+            class="bg-coffee text-paper px-6 py-3 rounded-md text-sm font-medium hover:opacity-90"
+          >
+            Get Early Access
+          </a>
+        </div>
       </section>
 
+      <section class="section section-surface">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+    
+          <img
+            src="ss1.png"
+            alt="Add album"
+            class="rounded-xl border border-border bg-surface"
+          />
+
+          <img
+            src="ss2.png"
+            alt="Library view"
+            class="rounded-xl border border-border bg-surface"
+          />
+
+          <img
+            src="ss3.png"
+            alt="Player view"
+            class="rounded-xl border border-border bg-surface"
+          />
+
+        </div>
+      </section>
+
+      <section class="section section-paper">
+        <h2 class="text-4xl md:text-5xl font-semibold">
+          Album first listening
+        </h2>
+
+        <p class="mt-8 max-w-lg text-2xl text-muted leading-relaxed">
+          Vinyl is built around albums, not playlists. <br/>
+          Choose an album and experience it as a complete work, from start to finish.
+        </p>
+      </section>
+
+      <section class="section section-surface">
+        <h2 class="text-4xl md:text-5xl font-semibold">
+          Designed for focus
+        </h2>
+
+        <p class="mt-8 max-w-lg text-2xl text-muted leading-relaxed">
+          No shuffle.<br/>
+          No skipping tracks.<br/>
+          No distractions competing for your attention.
+        </p>
+      </section>
+
+      <section id="how" class="section section-paper">
+        <h2 class="text-4xl md:text-5xl font-semibold">
+          Your music, on your device
+        </h2>
+
+        <ul class="mt-10 space-y-3 text-2xl text-muted">
+          Vinyl works with the music you already own.<br/>
+          No algorithms, no feeds, no recommendations deciding for you.
+        </ul>
+      </section>
+
+      <section class="section section-surface">
+        <h2 class="text-4xl md:text-5xl font-semibold">
+          Not for everyone
+        </h2>
+
+        <p class="mt-8 max-w-lg text-2xl text-muted leading-relaxed">
+          Vinyl is not for background listening.<br/>
+          Not for endless discovery.<br/>
+          Not for skipping through songs.<br/><br/>
+
+          Vinyl is for people who want to listen.
+        </p>
+      </section>
     </main>
   </body>
 </html>
